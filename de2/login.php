@@ -19,3 +19,5 @@ if (isset($_POST["user"]) && isset($_POST["pass"])) {
 
 // Trả về chuỗi JSON của kết quả đăng nhập
 echo json_encode($result);
+
+
