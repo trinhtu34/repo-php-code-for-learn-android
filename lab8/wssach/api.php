@@ -1,6 +1,4 @@
 <?php
-// Turn off all error reporting
-//error_reporting(0);
 
 // the sachdal file
 require_once 'sachdal.php';
