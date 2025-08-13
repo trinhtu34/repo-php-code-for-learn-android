@@ -22,6 +22,10 @@ getsachnew dùng POST nhưng khác với getsach ở chỗ là getsach phải tr
 api tất cả dùng GET trả về array
 user = admin
 pass = abcd
+| tài khoản | mật khẩu |
+|-----------|----------|
+| user | admin |
+| pass | abcd |
 
 ## wssach_post
 
