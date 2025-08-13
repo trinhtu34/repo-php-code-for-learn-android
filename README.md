@@ -1,3 +1,9 @@
+# Cấu trúc API
+
+http://13.213.63.200/ Tên folder / api.php
+example : http://13.213.63.200/wssach_object/api.php
+http://13.213.63.200/wssach_object/api.php?action=getds
+
 # Đề 1
 
 đăng nhập và lấy thông tin hàng hóa
