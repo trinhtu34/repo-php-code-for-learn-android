@@ -20,15 +20,23 @@ getsachnew dùng POST nhưng khác với getsach ở chỗ là getsach phải tr
 ## wssach
 
 api tất cả dùng GET trả về array
+user = admin
+pass = abcd
 
 ## wssach_post
 
 api tất cả dùng POST trả về array
+username = host
+password = 123
 
 ## wwsach_object
 
 api dùng GET trả về object
+user = admin
+pass = abcd
 
 ## wssach_post_object
 
 api dùng POST trả về object
+username = host
+password = 123
