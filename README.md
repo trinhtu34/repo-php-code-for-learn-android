@@ -17,6 +17,8 @@ getsachnew dùng POST nhưng khác với getsach ở chỗ là getsach phải tr
 
 # lab 8
 
+## ARRAY
+
 ### wssach
 
 api tất cả dùng GET trả về array
@@ -32,6 +34,8 @@ api tất cả dùng POST trả về array
 |-----------|----------|
 | username | host |
 | password | 123 |
+
+## OBJECT
 
 ### wwsach_object
 
