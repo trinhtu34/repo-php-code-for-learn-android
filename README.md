@@ -30,8 +30,8 @@ api tất cả dùng GET trả về array
 api tất cả dùng POST trả về array
 | tài khoản | mật khẩu |
 |-----------|----------|
-| user | host |
-| pass | abcd |
+| username | host |
+| password | 123 |
 
 ## wwsach_object
 
@@ -46,5 +46,5 @@ api dùng GET trả về object
 api dùng POST trả về object
 | tài khoản | mật khẩu |
 |-----------|----------|
-| user | host |
-| pass | abcd |
+| username | host |
+| password | 123 |
