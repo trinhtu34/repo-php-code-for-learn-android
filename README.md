@@ -19,8 +19,16 @@ getsachnew dùng POST nhưng khác với getsach ở chỗ là getsach phải tr
 
 ## wssach
 
-api tất cả dùng GET
+api tất cả dùng GET trả về array
 
 ## wssach_post
 
-api tất cả dùng POST
+api tất cả dùng POST trả về array
+
+## wwsach_object
+
+api dùng GET trả về object
+
+## wssach_post_object
+
+api dùng POST trả về object
