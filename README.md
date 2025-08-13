@@ -17,34 +17,34 @@ getsachnew dùng POST nhưng khác với getsach ở chỗ là getsach phải tr
 
 # lab 8
 
-## wssach
+### wssach
 
 api tất cả dùng GET trả về array
-| tài khoản | mật khẩu |
+| Key | value |
 |-----------|----------|
 | user | admin |
 | pass | abcd |
 
-## wssach_post
+### wssach_post
 
 api tất cả dùng POST trả về array
-| tài khoản | mật khẩu |
+| key | value |
 |-----------|----------|
 | username | host |
 | password | 123 |
 
-## wwsach_object
+### wwsach_object
 
 api dùng GET trả về object
-| tài khoản | mật khẩu |
+| Key | value |
 |-----------|----------|
 | user | admin |
 | pass | abcd |
 
-## wssach_post_object
+### wssach_post_object
 
 api dùng POST trả về object
-| tài khoản | mật khẩu |
+| key | value |
 |-----------|----------|
 | username | host |
 | password | 123 |
