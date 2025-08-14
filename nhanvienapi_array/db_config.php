@@ -1,10 +1,11 @@
 <?php
 class DBConnection{
     private $host = "localhost";
-    private $db_name = "qlnhanvien";
+    private $db_name = "dbnhanvienapiarray";
     private $username = "root";
-    private $password = "";
+    private $password = "Ngoc@2025!";
     private $conn;
+ 
  
 	/**
 	 * Khởi tạo - Mở kết nối đến database

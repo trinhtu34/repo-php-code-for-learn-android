@@ -1,9 +1,9 @@
 <?php
 class DBConnection{
     private $host = "localhost";
-    private $db_name = "qlnhanvienobject";
+    private $db_name = "dbnhanvienapiobject";
     private $username = "root";
-    private $password = "";
+    private $password = "Ngoc@2025!";
     private $conn;
  
 	/**

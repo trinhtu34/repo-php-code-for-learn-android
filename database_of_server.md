@@ -10,7 +10,7 @@ mật khẩu : Ngoc@2025!
 
 CREATE DATABASE on_ck_android CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE on_ck_android;
-CREATE TABLE sach (
+CREATE TABLE nhanvien (
 masach INT AUTO_INCREMENT PRIMARY KEY,
 tensach VARCHAR(255) NOT NULL,
 tacgia VARCHAR(255) NOT NULL
@@ -18,7 +18,7 @@ tacgia VARCHAR(255) NOT NULL
 
 CREATE DATABASE dbnhanvien CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE dbnhanvien;
-CREATE TABLE sach (
+CREATE TABLE nhanvien (
 manv INT AUTO_INCREMENT PRIMARY KEY,
 tennv VARCHAR(255) NOT NULL,
 hesoluong decimal(10,2) NOT NULL
