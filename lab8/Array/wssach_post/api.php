@@ -1,34 +1,34 @@
 <?php
-
-// the sachdal file
 require_once 'sachdal.php';
 
-// message to return
-$message = array();
+// Kiểu dữ liệu trả về là JSON
+header('Content-Type: application/json; charset=utf-8');
+
+// Đọc dữ liệu JSON từ body
+$data = json_decode(file_get_contents("php://input"), true);
+
+// Mặc định là getds nếu không có action
+$action = $data["action"] ?? "getds";
 
 $dal = new SachDAL();
-
-// Lấy action từ GET, nếu không có thì mặc định là getds
-$action = isset($_POST["action"]) && $_POST["action"] !== "" 
-    ? $_POST["action"] 
-    : "getds";
+$message = [];
 
 switch ($action) {
     case 'getds':
         $message = $dal->get();
         break;
-    
+
     case 'them':
-        $ten = isset($_GET["tensach"]) ? $_POST["tensach"] : "";
-        $tacgia = isset($_GET["tacgia"]) ? $_POST["tacgia"] : "";
+        $ten = $data["tensach"] ?? "";
+        $tacgia = $data["tacgia"] ?? "";
         $result = $dal->insert($ten, $tacgia);
-        $message = ["message" => json_encode($result)];
+        $message = ["message" => $result];
         break;
 
     case 'xoa':
-        $ma = isset($_POST["masach"]) ? $_POST["masach"] : "";
+        $ma = $data["masach"] ?? "";
         $result = $dal->delete($ma);
-        $message = ["message" => json_encode($result)];
+        $message = ["message" => $result];
         break;
 
     default:
@@ -36,10 +36,6 @@ switch ($action) {
         break;
 }
 
-//The JSON message
-header('Content-type: application/json; charset=utf-8');
-
-//Clean (erase) the output buffer
+// Xóa bộ đệm và trả về JSON
 ob_clean();
-
 echo json_encode($message, JSON_UNESCAPED_UNICODE);

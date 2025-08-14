@@ -1,21 +1,19 @@
 <?php
-// Kiểu dữ liệu trả về là JSON
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 
-// Mặc định nếu đăng nhập không thành công thì sẽ trả về false
+// Đọc dữ liệu JSON từ body
+$data = json_decode(file_get_contents("php://input"), true);
+
+// Mặc định kết quả là false
 $result = ["RESULT" => "false"];
 
-// Kiểm tra có dữ liệu username và password do người dùng gửi lên hay không?
-if (isset($_POST["username"]) && isset($_POST["password"])) {
-    // Lấy username và password do người dùng gửi lên gán vào 2 biến
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+if (isset($data["username"]) && isset($data["password"])) {
+    $username = $data["username"];
+    $password = $data["password"];
 
-    // Kiểm tra nếu username và password hợp lệ thì gán biến kết quả thành true
-    if ($username == "host" && $password == "123") {
+    if ($username === "host" && $password === "123") {
         $result = ["RESULT" => "true"];
     }
 }
 
-// Trả về chuỗi JSON của kết quả đăng nhập
-echo json_encode($result);
+echo json_encode($result, JSON_UNESCAPED_UNICODE);
