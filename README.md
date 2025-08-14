@@ -62,17 +62,22 @@ api dùng POST trả về object
 # nhanvienapi_array và nhanvienapi_object
 
 _2 api này chỉ khác nhau kiểu dữ liệu trả về thôi , còn api thì y hệt_
+
 login GET
+
 | Key | value |
 |-----------|----------|
 | user | admin |
 | pass | abcd |
 
 login POST
+
 | key | value |
 |----------|------|
 | username | host |
 | password | 123 |
+
+api getall
 
 ```
 http://13.213.63.200/nhanvienapi_array/api_get.php?action=getall
@@ -82,6 +87,8 @@ http://13.213.63.200/nhanvienapi_array/api_get.php?action=getall
 http://13.213.63.200/nhanvienapi_array/api_post.php
 ```
 
+api login 
+
 ```
 http://13.213.63.200/nhanvienapi_array/login_get.php?user=admin&pass=abcd
 ```
@@ -89,6 +96,8 @@ http://13.213.63.200/nhanvienapi_array/login_get.php?user=admin&pass=abcd
 ```
 http://13.213.63.200/nhanvienapi_array/login_post.php
 ```
+
+api thêm xóa sửa 
 
 ```
 http://13.213.63.200/nhanvienapi_array/api_get.php?action=add&tennv=tutrinh&luongcb=69
