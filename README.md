@@ -61,7 +61,7 @@ api dùng POST trả về object
 
 # nhanvienapi_array và nhanvienapi_object
 
-_2 api này chỉ khác nhau kiểu dữ liệu trả về thôi , còn api thì y hệt_
+_2 api này chỉ khác nhau kiểu dữ liệu trả về thôi , còn api thì y hệt_<\br>
 login GET
 | Key | value |
 |-----------|----------|
