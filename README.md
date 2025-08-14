@@ -73,6 +73,8 @@ login POST
 |----------|------|
 | username | host |
 | password | 123 |
+
+
 '''
 http://13.213.63.200/nhanvienapi_array/api_get.php?action=getall
 '''
