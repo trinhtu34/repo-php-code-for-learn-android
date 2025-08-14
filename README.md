@@ -59,7 +59,7 @@ api dùng POST trả về object
 | username | host |
 | password | 123 |
 
-### nhanvienapi_array và nhanvienapi_object
+# nhanvienapi_array và nhanvienapi_object
 
 _2 api này chỉ khác nhau kiểu dữ liệu trả về thôi , còn api thì y hệt_
 login GET
