@@ -1,3 +1,5 @@
+Tạo EC2 AMZ Linux 2023 --> ssh vào --> cài mysql , cài nginx , cài git
+
 **_lệnh đổi pass db_**
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'Ngoc@2025!';
 
