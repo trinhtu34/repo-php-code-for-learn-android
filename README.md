@@ -74,12 +74,7 @@ login POST
 | username | host |
 | password | 123 |
 
-<<<<<<< HEAD
-'''
-=======
-
 ```
->>>>>>> 22824082c6342b7672fbc0f59fb2313560aba45d
 http://13.213.63.200/nhanvienapi_array/api_get.php?action=getall
 ```
 
