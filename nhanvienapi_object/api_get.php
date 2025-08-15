@@ -6,7 +6,7 @@ $message = new stdClass();
 
 switch ($_GET["action"] ?? '') {
     case 'getall':
-        $message->data = $dao->get();
+        $message->nhanvien = $dao->get(); // array of objects
         break;
 
     case 'add':

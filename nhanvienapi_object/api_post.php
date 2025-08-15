@@ -2,48 +2,48 @@
 require_once 'controller.php';
 
 $dao = new DAO();
+
+// Lấy dữ liệu trực tiếp từ $_POST
+$action = $_POST["action"] ?? '';
 $message = new stdClass();
 
-switch ($_POST["action"] ?? '') {
+switch ($action) {
     case 'login':
         $username = $_POST["username"] ?? '';
         $password = $_POST["password"] ?? '';
         $result = $dao->login($username, $password);
 
         if ($result->num_rows > 0) {
-            $message->status = "success";
+            $message->user = $result->fetch_object();
         } else {
-            $message->status = "error";
+            $message->message = "Invalid username or password";
         }
         break;
 
     case 'getall':
-        $message->data = $dao->get();
+        $message->nhanvien = $dao->get(); // array of objects
         break;
 
     case 'add':
         $tennv = $_POST["tennv"] ?? '';
         $luongcb = $_POST["luongcb"] ?? '';
-        $result = $dao->insert($tennv, $luongcb);
-        $message->message = $result;
+        $message->insert_id = $dao->insert($tennv, $luongcb);
         break;
 
     case 'remove':
         $ma = $_POST["manv"] ?? '';
-        $result = $dao->delete($ma);
-        $message->message = $result;
+        $message->deleted_rows = $dao->delete($ma);
         break;
 
     case 'update':
         $ma = $_POST["manv"] ?? '';
         $tennv = $_POST["tennv"] ?? '';
         $luongcb = $_POST["luongcb"] ?? '';
-        $result = $dao->update($ma, $tennv, $luongcb);
-        $message->message = $result;
+        $message->updated_rows = $dao->update($ma, $tennv, $luongcb);
         break;
 
     default:
-        $message->error = "Unknown method " . ($_POST["action"] ?? '');
+        $message->message = "Unknown method: $action";
         break;
 }
 
