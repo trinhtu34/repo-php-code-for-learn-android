@@ -3,6 +3,19 @@
 require_once 'db_config.php';
 
 class DAO{
+	public function login($username, $password)
+	{
+		$dbConnection = new DBConnection();
+		$conn = $dbConnection->getConnection();
+		$query = "SELECT * FROM user WHERE username = ? AND password = ?";
+		$stmt = $conn->prepare($query);
+		$stmt->bind_param("ss", $username, $password);
+		$stmt->execute();
+		$ret = $stmt->get_result();
+		
+		$stmt->close();
+		return $ret;
+	}
 	
 	public function get()
 	{

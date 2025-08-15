@@ -1,15 +1,24 @@
 <?php
 
-require 'controller.php';
+require_once 'controller.php';
 
-// Lấy dữ liệu từ body của request POST
-$data = json_decode(file_get_contents("php://input"), true);
-$action = $data['action'] ?? '';
+
+$message = array();
 
 $dao = new DAO();
 
-switch($action)
+switch($_POST["action"])
 {
+	case 'login':
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		$result = $dao->login($username, $password);
+		if ($result->num_rows > 0) {
+			$message = ["status" => "success"];
+		} else {
+			$message =  ["status" => "error"];
+		}
+		break;
 	case 'getall':
 		
 		$message = $dao->get();
@@ -17,32 +26,30 @@ switch($action)
 	
 	case 'add':
 		
-		$tennv = $data["tennv"];
-		$luongcb = $data["luongcb"];
+		$tennv = $_POST["tennv"];
+		$luongcb = $_POST["luongcb"];
 		$result = $dao->insert($tennv, $luongcb);
 		$message = ["message" => json_encode($result)];
 		break;
 
 	case 'remove':	
-		$ma = $data["manv"];
+		$ma = $_POST["manv"];
 		$result = $dao->delete($ma);
 		$message = ["message" => json_encode($result)];
 		break;
 
     case 'update':
-        $ma = $data["manv"];
-        $tennv = $data["tennv"];
-        $luongcb = $data["luongcb"];
+        $ma = $_POST["manv"];
+        $tennv = $_POST["tennv"];
+        $luongcb = $_POST["luongcb"];
 
         $result = $dao->update($ma, $tennv, $luongcb);
 		$message = ["message" => json_encode($result)];
 		break;
 	default:
-		$message = ["message" => "Unknown method " . $data["action"]];
+		$message = ["message" => "Unknown method " . $_POST["action"]];
 		break;
 }
-
-
 
 //The JSON message
 header('Content-type: application/json; charset=utf-8');

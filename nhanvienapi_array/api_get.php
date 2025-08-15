@@ -15,7 +15,6 @@ switch($_GET["action"])
 		break;
 	
 	case 'add':
-		
 		$tennv = $_GET["tennv"];
 		$luongcb = $_GET["luongcb"];
 		$result = $dao->insert($tennv, $luongcb);
